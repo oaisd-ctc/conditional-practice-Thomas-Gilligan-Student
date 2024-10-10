@@ -5,18 +5,31 @@ class Program {
         Console.Clear();
 
         checkForPositiveNegativeZero(-1);
-        checkForPositiveNegativeZero(0);
         checkForPositiveNegativeZero(1);
-        findMinimum(45,15,50);
-        findMaximum(45,15,50);
-        isDivisibleBy5(26);
-        isDivisibleBy5(25);
-        checkEvenOrOdd(7);
-        checkEvenOrOdd(10);
+        checkForPositiveNegativeZero(0);
+        
+        findMinimum(1, 2, 3);
+        findMinimum(2, 1, 3);
+        findMinimum(3, 2, 1);
+
+        findMaximum(1, 2, 3);
+        findMaximum(2, 1, 3);
+        findMaximum(3, 2, 1);
+
+        isDivisibleBy5(5);
+        isDivisibleBy5(6);
+
+        checkEvenOrOdd(2);
+        checkEvenOrOdd(3);
+
         checkVowelOrConsonant('e');
-        checkVowelOrConsonant('Y');
-        checkVowelOrConsonant('t');
-        displayDayOfWeek(4);
+        checkVowelOrConsonant('E');
+        checkVowelOrConsonant('s');
+        checkVowelOrConsonant('S');
+
+        displayDayOfWeek(0);
+        displayDayOfWeek(3);
+        displayDayOfWeek(6);
 
     }
     // Define your functions below:
