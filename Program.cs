@@ -4,36 +4,36 @@ class Program {
     public static void Main(string[] args) {
         Console.Clear();
 
-        checkForPositiveNegativeZero(-1);
-        checkForPositiveNegativeZero(1);
-        checkForPositiveNegativeZero(0);
+        CheckForPositiveNegativeZero(-1);
+        CheckForPositiveNegativeZero(1); //Double checked
+        CheckForPositiveNegativeZero(0);
         
-        findMinimum(1, 2, 3);
-        findMinimum(2, 1, 3);
-        findMinimum(3, 2, 1);
+        FindMinimum(1, 2, 3);
+        FindMinimum(2, 1, 3); //Double checked & fixed
+        FindMinimum(3, 2, 1);
 
-        findMaximum(1, 2, 3);
-        findMaximum(2, 1, 3);
-        findMaximum(3, 2, 1);
+        FindMaximum(1, 2, 3);
+        FindMaximum(2, 1, 3); //Double checked & fixed
+        FindMaximum(3, 2, 1);
 
-        isDivisibleBy5(5);
-        isDivisibleBy5(6);
+        IsDivisibleBy5(5); //Double checked
+        IsDivisibleBy5(6);
 
-        checkEvenOrOdd(2);
-        checkEvenOrOdd(3);
+        CheckEvenOrOdd(2); //Double checked
+        CheckEvenOrOdd(3);
 
-        checkVowelOrConsonant('e');
-        checkVowelOrConsonant('E');
-        checkVowelOrConsonant('s');
-        checkVowelOrConsonant('S');
+        CheckVowelOrConsonant('e');
+        CheckVowelOrConsonant('E'); //Double checked
+        CheckVowelOrConsonant('s');
+        CheckVowelOrConsonant('S');
 
-        displayDayOfWeek(0);
-        displayDayOfWeek(3);
-        displayDayOfWeek(6);
+        DisplayDayOfWeek(0);
+        DisplayDayOfWeek(3); //Double checked
+        DisplayDayOfWeek(6);
 
     }
     // Define your functions below:
-    public static void checkForPositiveNegativeZero(int number) {
+    public static void CheckForPositiveNegativeZero(int number) {
         if (number == 0) {
             Console.WriteLine("Your number is zero");
         } else if (number > 0) {
@@ -42,37 +42,35 @@ class Program {
             Console.WriteLine("Your number is negative");
         }
     }
-    public static void findMinimum(int num1, int num2, int num3) {
-        int minimum = 0;
-        if (num1 < num2 && num1 < num3) {
-            minimum = num1;
-        } else if (num2 < num1 && num2 < num3) {
+    public static void FindMinimum(int num1, int num2, int num3) {
+        int minimum = num1;
+        if (num2 < minimum) {
             minimum = num2;
-        } else {
+        }
+        if (num3 < minimum){
             minimum = num3;
         }
         Console.WriteLine($"The minimum value is {minimum}.");
     }
-    public static void findMaximum(int num1, int num2, int num3) {
-        int maximum = 0;
-        if (num1 > num2 && num1 > num3) {
-            maximum = num1;
-        } else if (num2 > num1 && num2 > num3) {
+    public static void FindMaximum(int num1, int num2, int num3) {
+        int maximum = num1;
+        if (num2 > maximum){
             maximum = num2;
-        } else {
+        }
+        if (num3 > maximum){
             maximum = num3;
         }
         Console.WriteLine($"The maximum value is {maximum}.");
     }
 
-    public static void isDivisibleBy5(int number) {
+    public static void IsDivisibleBy5(int number) {
         if (number % 5 == 0) {
             Console.WriteLine($"{number} is divisible by 5.");
         } else {
             Console.WriteLine($"{number} is not divisible by 5.");
         }
     }
-    public static void checkEvenOrOdd(int number) {
+    public static void CheckEvenOrOdd(int number) {
         if (number % 2 == 0) {
             Console.WriteLine($"{number} is an even number.");
         } else {
@@ -80,7 +78,7 @@ class Program {
         }
     }
 
-    public static void checkVowelOrConsonant(char letter) {
+    public static void CheckVowelOrConsonant(char letter) {
         if ("aeiouyAEIOUY".Contains(letter)) {
             Console.WriteLine(letter + " is a vowel.");
         } else {
@@ -88,7 +86,7 @@ class Program {
         }
     }
 
-    public static void displayDayOfWeek(int dayCode) {
+    public static void DisplayDayOfWeek(int dayCode) {
         switch (dayCode) {
             case 0: Console.WriteLine("Sunday"); break;
             case 1: Console.WriteLine("Monday"); break;
